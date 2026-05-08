@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card history-card">
+
+    <h1>Calculation History</h1>
+
+    <p class="subtitle">
+        Previously saved specimen calculations.
+    </p>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Measured</th>
+                <th>Microscope</th>
+                <th>Magnification</th>
+                <th>Real Size</th>
+                <th>Unit</th>
+            </tr>
+
+            {% for record in records %}
+
+            <tr>
+
+                {% for item in record %}
+
+                <td>{{ item }}</td>
+
+                {% endfor %}
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
